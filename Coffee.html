@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Menu — Bean Boutique</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="page-loader"><div class="loader-logo">Bean <span>Boutique</span></div></div>
+<div id="scroll-progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Bean <span>Boutique</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="coffee.html" class="active">Coffee</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="offers.html">Offers</a></li>
+    <li><a href="cart.html" class="nav-cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a><a href="coffee.html">Coffee</a><a href="equipment.html">Equipment</a>
+  <a href="events.html">Events</a><a href="offers.html">Offers</a><a href="cart.html">Cart</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=80');background-position:center 40%;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,0.95) 0%,rgba(8,8,8,0.35) 100%);"></div>
+  <div class="page-hero-content">
+    <h1 class="page-hero-title">The Coffee<br><em>Menu</em></h1>
+    <p class="page-hero-sub">Single Origin · Signature Blends · Seasonal Specials</p>
+  </div>
+</div>
+
+<!-- COFFEE SECTION -->
+<section class="section" style="background:var(--black);">
+  <div style="max-width:1400px;margin:0 auto;">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar reveal">
+      <div class="filter-search">
+        <i class="fas fa-search filter-search-icon"></i>
+        <input type="text" id="product-search" placeholder="Search coffees…" />
+      </div>
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="espresso">Espresso</button>
+      <button class="filter-btn" data-cat="pour-over">Pour Over</button>
+      <button class="filter-btn" data-cat="cold-brew">Cold Brew</button>
+      <button class="filter-btn" data-cat="signature">Signature</button>
+      <button class="filter-btn" data-cat="seasonal">Seasonal</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+
+      <!-- 1 -->
+      <div class="product-card reveal" data-cat="espresso" data-name="Midnight Espresso" data-desc="dark roast smoky bold">
+        <div class="product-card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=75" alt="Midnight Espresso" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Espresso</span>
+          <div class="product-name">Midnight Espresso</div>
+          <div class="product-notes">Dark Roast · Smoky · Bold · Full Body</div>
+          <div class="product-desc">Extracted at 93°C with a 28-second pull, this is coffee at its most commanding. Rich, dense, unapologetic.</div>
+          <div class="product-footer">
+            <span class="product-price">$14</span>
+            <button class="add-to-cart-btn" data-id="midnight-espresso" data-name="Midnight Espresso" data-price="14" data-img="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=60" data-note="Espresso · Dark Roast"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="product-card reveal reveal-delay-1" data-cat="pour-over" data-name="Ethiopia Yirgacheffe" data-desc="blueberry jasmine citrus floral light">
+        <div class="product-card-img"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500&q=75" alt="Ethiopia Yirgacheffe" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Pour Over</span>
+          <div class="product-name">Ethiopia Yirgacheffe</div>
+          <div class="product-notes">Blueberry · Jasmine · Bergamot · Citrus</div>
+          <div class="product-desc">An aromatic experience unlike any other. Washed process, light roast, brewed in a V60 to preserve every delicate note.</div>
+          <div class="product-footer">
+            <span class="product-price">$16</span>
+            <button class="add-to-cart-btn" data-id="eth-yirgacheffe" data-name="Ethiopia Yirgacheffe" data-price="16" data-img="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=200&q=60" data-note="Pour Over · Light Roast"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="product-card reveal reveal-delay-2" data-cat="cold-brew" data-name="Cold Brew Reserve" data-desc="smooth rich 24 hour steep chocolate">
+        <div class="product-card-img"><img src="images/Cold brew.jpg" alt="Cold Brew Reserve" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Cold Brew</span>
+          <div class="product-name">Cold Brew Reserve</div>
+          <div class="product-notes">24hr Steep · Dark Chocolate · Smooth Finish</div>
+          <div class="product-desc">A 24-hour cold extraction that strips the bitterness and amplifies the silky, chocolate undertones of our Guatemala blend.</div>
+          <div class="product-footer">
+            <span class="product-price">$13</span>
+            <button class="add-to-cart-btn" data-id="cold-brew-reserve" data-name="Cold Brew Reserve" data-price="13" data-img="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=60" data-note="Cold Brew"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="product-card reveal" data-cat="signature" data-name="Golden Latte" data-desc="turmeric oat milk honey warm spice">
+        <div class="product-card-img"><img src="images/Golden lattee.jpg" alt="Golden Latte" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Signature</span>
+          <div class="product-name">Golden Latte</div>
+          <div class="product-notes">Turmeric · Oat Milk · Raw Honey · Ginger</div>
+          <div class="product-desc">A warming, anti-inflammatory ritual in a cup. Velvety oat milk steamed with house-made golden spice paste and wildflower honey.</div>
+          <div class="product-footer">
+            <span class="product-price">$11</span>
+            <button class="add-to-cart-btn" data-id="golden-latte" data-name="Golden Latte" data-price="11" data-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200&q=60" data-note="Signature Drink"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="product-card reveal reveal-delay-1" data-cat="espresso" data-name="Black Cortado" data-desc="equal parts balanced clean milk espresso">
+        <div class="product-card-img"><img src="images/black.jpg" alt="Black Cortado" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Espresso</span>
+          <div class="product-name">Black Cortado</div>
+          <div class="product-notes">Equal Parts · Balanced · Clean · Precise</div>
+          <div class="product-desc">Equal volumes of espresso and warm milk, perfectly calibrated. The cortado is coffee stripped to its essence.</div>
+          <div class="product-footer">
+            <span class="product-price">$9</span>
+            <button class="add-to-cart-btn" data-id="black-cortado" data-name="Black Cortado" data-price="9" data-img="https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?w=200&q=60" data-note="Espresso"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="product-card reveal reveal-delay-2" data-cat="seasonal" data-name="Sakura Bloom" data-desc="cherry blossom floral spring limited edition">
+        <div class="product-card-img"><img src="images/sakura.jpg" alt="Sakura Bloom" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Seasonal</span>
+          <div class="product-name">Sakura Bloom</div>
+          <div class="product-notes">Cherry Blossom · Hibiscus · Lychee · Limited</div>
+          <div class="product-desc">A fleeting, spring-only collaboration with a Tokyo micro-roaster. Floral, soft, and impossibly elegant.</div>
+          <div class="product-footer">
+            <span class="product-price">$18</span>
+            <button class="add-to-cart-btn" data-id="sakura-bloom" data-name="Sakura Bloom" data-price="18" data-img="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=200&q=60" data-note="Seasonal · Limited Edition"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="product-card reveal" data-cat="pour-over" data-name="Colombia Huila" data-desc="caramel stone fruit vanilla medium roast">
+        <div class="product-card-img"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500&q=75" alt="Colombia Huila" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Pour Over</span>
+          <div class="product-name">Colombia Huila</div>
+          <div class="product-notes">Caramel · Stone Fruit · Vanilla · Medium</div>
+          <div class="product-desc">From a family-owned farm at 1,800m in the Andes. Honey-processed, medium roast, brewed in a Chemex for maximum clarity.</div>
+          <div class="product-footer">
+            <span class="product-price">$15</span>
+            <button class="add-to-cart-btn" data-id="colombia-huila" data-name="Colombia Huila" data-price="15" data-img="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=200&q=60" data-note="Pour Over · Medium Roast"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="product-card reveal reveal-delay-1" data-cat="cold-brew" data-name="Nitro Cold Brew" data-desc="nitrogen infused creamy cascades">
+        <div class="product-card-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=75" alt="Nitro Cold Brew" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Cold Brew</span>
+          <div class="product-name">Nitro Cold Brew</div>
+          <div class="product-notes">Nitrogen · Cascading Head · Silky Cream</div>
+          <div class="product-desc">Served straight from the tap with a cascading nitrogen head. Smooth as velvet, bold as midnight, refreshing as dawn.</div>
+          <div class="product-footer">
+            <span class="product-price">$14</span>
+            <button class="add-to-cart-btn" data-id="nitro-cold-brew" data-name="Nitro Cold Brew" data-price="14" data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&q=60" data-note="Cold Brew · Nitro"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="product-card reveal reveal-delay-2" data-cat="signature" data-name="Charcoal Flat White" data-desc="activated charcoal oat milk signature espresso">
+        <div class="product-card-img"><img src="images/charcoal latte.jpg" alt="Charcoal Flat White" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Signature</span>
+          <div class="product-name">Charcoal Flat White</div>
+          <div class="product-notes">Activated Charcoal · Oat Milk · House Espresso</div>
+          <div class="product-desc">Our most Instagrammed creation. Pure drama in a cup: jet-black activated charcoal milk meeting a bright double ristretto.</div>
+          <div class="product-footer">
+            <span class="product-price">$13</span>
+            <button class="add-to-cart-btn" data-id="charcoal-flat-white" data-name="Charcoal Flat White" data-price="13" data-img="https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?w=200&q=60" data-note="Signature"><span>Add to Cart</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Bean <span>Boutique</span></span>
+      <p class="footer-tagline">A sanctuary for the discerning coffee lover. Every cup is a story.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul>
+      <li><a href="index.html">Home</a></li><li><a href="coffee.html">Coffee</a></li>
+      <li><a href="equipment.html">Equipment</a></li><li><a href="events.html">Events</a></li>
+      <li><a href="offers.html">Offers</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="#">12 Roaster Lane, Dar es Salaam</a></li>
+      <li><a href="tel:+255700000000">+255 700 000 000</a></li>
+      <li><a href="mailto:hello@beanboutique.co">hello@beanboutique.co</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Hours</h5><ul>
+      <li><a href="#">Mon–Fri: 7am – 8pm</a></li>
+      <li><a href="#">Sat–Sun: 8am – 6pm</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bean Boutique. All rights reserved.</p>
+    <p>Crafted with obsession &amp; a good espresso.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bean Boutique — Experience Coffee Differently</title>
+  <meta name="description" content="Bean Boutique: a cinematic luxury coffee experience. Premium beans, artisan blends, and immersive tasting journeys." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icon font via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader"><div class="loader-logo">Bean <span>Boutique</span></div></div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- ── NAVBAR ────────────────────────────────────────────── -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Bean <span>Boutique</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="coffee.html">Coffee</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="offers.html">Offers</a></li>
+    <li>
+      <a href="cart.html" class="nav-cart-icon">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </li>
+  </ul>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="coffee.html">Coffee</a>
+  <a href="equipment.html">Equipment</a>
+  <a href="events.html">Events</a>
+  <a href="offers.html">Offers</a>
+  <a href="cart.html">Cart</a>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-bg parallax-container">
+    <div class="parallax-img hero-bg-img" style="
+      position:absolute; inset:-20%; 
+      background: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=85') center/cover no-repeat;
+      will-change: transform;
+    "></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Est. 2019 · Specialty Coffee House</p>
+    <h1 class="hero-title">Experience Coffee<br><em>Differently</em></h1>
+    <p class="hero-subtitle">Single Origin · Artisan Roasts · Immersive Rituals</p>
+    <a href="coffee.html" class="hero-cta">Explore the Menu</a>
+  </div>
+  <a href="#featured" class="scroll-arrow">
+    <span>Scroll</span>
+    <div class="scroll-arrow-line"></div>
+  </a>
+</section>
+
+<!-- ── FEATURED COFFEE ───────────────────────────────────── -->
+<section class="section featured-section" id="featured">
+  <div style="max-width:1400px; margin:0 auto;">
+    <p class="section-label reveal">Signature Collection</p>
+    <h2 class="section-title reveal reveal-delay-1">Curated for <em>Connoisseurs</em></h2>
+    <p class="section-subtitle reveal reveal-delay-2">Each cup tells the story of the land it came from, the hands that shaped it, and the ritual that brings it to life.</p>
+
+    <div class="featured-grid" style="margin-top:4rem;">
+      <!-- Card 1 -->
+      <div class="coffee-card reveal">
+        <img src="images/Ethiopia-Yirgacheffe.jpg" alt="Ethiopia Yirgacheffe" loading="lazy" />
+        <div class="coffee-card-overlay">
+          <div class="coffee-card-name">Ethiopia Yirgacheffe</div>
+          <div class="coffee-card-note">Blueberry · Jasmine · Citrus</div>
+          <a href="coffee.html" class="coffee-card-btn">Discover →</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="coffee-card reveal reveal-delay-1">
+        <img src="images/Colombia-Huila.jpg" alt="Colombia Huila" loading="lazy" />
+        <div class="coffee-card-overlay">
+          <div class="coffee-card-name">Colombia Huila</div>
+          <div class="coffee-card-note">Caramel · Stone Fruit · Vanilla</div>
+          <a href="coffee.html" class="coffee-card-btn">Discover →</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="coffee-card reveal reveal-delay-2">
+        <img src="images/Guatemalan.jpg" alt="Guatemala Antigua" loading="lazy" />
+        <div class="coffee-card-overlay">
+          <div class="coffee-card-name">Guatemala Antigua</div>
+          <div class="coffee-card-note">Dark Chocolate · Almond · Cedar</div>
+          <a href="coffee.html" class="coffee-card-btn">Discover →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED PRODUCTS SLIDER ─────────────────────────── -->
+<section class="section" style="background:var(--charcoal); padding-top:5rem; padding-bottom:5rem;">
+  <div style="max-width:1400px; margin:0 auto;">
+    <p class="section-label reveal">Popular Right Now</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:0;">Staff <em>Favourites</em></h2>
+
+    <div id="featured-slider" class="slider-wrapper">
+      <div class="slider-track">
+        <!-- Slides -->
+        <div class="slider-slide">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=75" alt="Midnight Espresso" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-badge">Espresso</span>
+              <div class="product-name">Midnight Espresso</div>
+              <div class="product-notes">Dark Roast · Smoky · Bold</div>
+              <div class="product-footer">
+                <span class="product-price">$14</span>
+                <button class="add-to-cart-btn"
+                  data-id="midnight-espresso"
+                  data-name="Midnight Espresso"
+                  data-price="14"
+                  data-img="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=60"
+                  data-note="Dark Roast · Smoky · Bold">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=75" alt="Golden Latte" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-badge">Signature</span>
+              <div class="product-name">Golden Latte</div>
+              <div class="product-notes">Turmeric · Oat Milk · Honey</div>
+              <div class="product-footer">
+                <span class="product-price">$11</span>
+                <button class="add-to-cart-btn"
+                  data-id="golden-latte"
+                  data-name="Golden Latte"
+                  data-price="11"
+                  data-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200&q=60"
+                  data-note="Turmeric · Oat Milk · Honey">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=75" alt="Cold Brew Reserve" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-badge">Cold Brew</span>
+              <div class="product-name">Cold Brew Reserve</div>
+              <div class="product-notes">24hr Steep · Smooth · Rich</div>
+              <div class="product-footer">
+                <span class="product-price">$13</span>
+                <button class="add-to-cart-btn"
+                  data-id="cold-brew-reserve"
+                  data-name="Cold Brew Reserve"
+                  data-price="13"
+                  data-img="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=60"
+                  data-note="24hr Steep · Smooth · Rich">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="images/cortado.jpg" alt="Cortado" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-badge">Cortado</span>
+              <div class="product-name">Black Cortado</div>
+              <div class="product-notes">Equal Parts · Balanced · Clean</div>
+              <div class="product-footer">
+                <span class="product-price">$9</span>
+                <button class="add-to-cart-btn"
+                  data-id="black-cortado"
+                  data-name="Black Cortado"
+                  data-price="9"
+                  data-img="https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?w=200&q=60"
+                  data-note="Equal Parts · Balanced · Clean">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-slide">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500&q=75" alt="Drip Filter" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <span class="product-badge">Pour Over</span>
+              <div class="product-name">Artisan Pour Over</div>
+              <div class="product-notes">Floral · Light Roast · Clean</div>
+              <div class="product-footer">
+                <span class="product-price">$12</span>
+                <button class="add-to-cart-btn"
+                  data-id="artisan-pour-over"
+                  data-name="Artisan Pour Over"
+                  data-price="12"
+                  data-img="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=200&q=60"
+                  data-note="Floral · Light Roast · Clean">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="slider-controls">
+        <button class="slider-btn prev-btn"><i class="fas fa-arrow-left"></i></button>
+        <button class="slider-btn next-btn"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="slider-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BREWING EXPERIENCE ─────────────────────────────────── -->
+<section class="brew-section">
+  <div class="brew-visual parallax-container">
+    <img class="parallax-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80" alt="Brewing process" loading="lazy" style="width:100%;height:120%;object-fit:cover;position:absolute;top:-10%;" />
+  </div>
+  <div class="brew-content">
+    <p class="section-label reveal">The Ritual</p>
+    <h2 class="section-title reveal reveal-delay-1">The Art of<br><em>Brewing</em></h2>
+    <p class="section-subtitle reveal reveal-delay-2">Every extraction is a meditation. We believe in precision, patience, and the quiet magic of transformation.</p>
+
+    <div class="brew-steps">
+      <div class="brew-step reveal reveal-delay-1">
+        <div class="brew-step-num">01</div>
+        <div class="brew-step-info">
+          <h3>Source</h3>
+          <p>We work directly with farmers across Ethiopia, Colombia, and Guatemala — sustainable, traceable, extraordinary.</p>
+        </div>
+      </div>
+      <div class="brew-step reveal reveal-delay-2">
+        <div class="brew-step-num">02</div>
+        <div class="brew-step-info">
+          <h3>Roast</h3>
+          <p>Small-batch roasting in our Probat drum roaster, dialled to the degree for each origin's unique character.</p>
+        </div>
+      </div>
+      <div class="brew-step reveal reveal-delay-3">
+        <div class="brew-step-num">03</div>
+        <div class="brew-step-info">
+          <h3>Brew</h3>
+          <p>Pour over, espresso, or cold brew — each method chosen to honour the bean's best qualities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EVENTS PREVIEW ─────────────────────────────────────── -->
+<section class="section events-preview" id="events">
+  <div style="max-width:1400px; margin:0 auto;">
+    <p class="section-label reveal">What's On</p>
+    <h2 class="section-title reveal reveal-delay-1">Upcoming <em>Events</em></h2>
+    <p class="section-subtitle reveal reveal-delay-2">Immersive tastings, expert workshops, and intimate meet-the-roaster evenings.</p>
+
+    <div class="events-grid">
+      <div class="event-card reveal">
+        <div class="event-date"><i class="far fa-calendar"></i> &nbsp;May 10, 2026</div>
+        <div class="event-title">Coffee Tasting Flight</div>
+        <div class="event-desc">A guided journey through five single-origin profiles, with expert tasting notes and brewing insights.</div>
+        <a href="events.html" class="event-link">Reserve Your Seat <span>→</span></a>
+      </div>
+      <div class="event-card reveal reveal-delay-1">
+        <div class="event-date"><i class="far fa-calendar"></i> &nbsp;May 17, 2026</div>
+        <div class="event-title">Latte Art Workshop</div>
+        <div class="event-desc">Master the milk-steaming and pouring techniques used by our champion baristas.</div>
+        <a href="events.html" class="event-link">Reserve Your Seat <span>→</span></a>
+      </div>
+      <div class="event-card reveal reveal-delay-2">
+        <div class="event-date"><i class="far fa-calendar"></i> &nbsp;May 24, 2026</div>
+        <div class="event-title">Meet the Roaster</div>
+        <div class="event-desc">An intimate evening with our head roaster exploring origins, processing methods and the craft of roasting.</div>
+        <a href="events.html" class="event-link">Reserve Your Seat <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUBSCRIPTION BANNER ───────────────────────────────── -->
+<section class="sub-banner reveal">
+  <div>
+    <p class="section-label">Monthly Subscription</p>
+    <h2 class="section-title">Never Run Out of<br><em>the Good Stuff</em></h2>
+    <p class="section-subtitle" style="margin:0 auto 3rem;">Fresh beans, expertly roasted, delivered to your door every month. Cancel anytime.</p>
+    <a href="offers.html" class="btn-primary"><span>View Subscription Plans</span></a>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Bean <span>Boutique</span></span>
+      <p class="footer-tagline">A sanctuary for the discerning coffee lover. Where every cup is a story, and every visit is a ritual.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h3>Navigate</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="coffee.html">Coffee</a></li>
+        <li><a href="equipment.html">Equipment</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="#">12 Roaster Lane, Dar es Salaam</a></li>
+        <li><a href="tel:+255700000000">+255 700 000 000</a></li>
+        <li><a href="mailto:hello@beanboutique.co">hello@beanboutique.co</a></li>
+        <li><a href="#">Mon–Fri: 7am – 8pm</a></li>
+        <li><a href="#">Sat–Sun: 8am – 6pm</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Our Location</h3>
+      <iframe class="map-frame" title="Bean Boutique Location"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=39.20,-6.82,39.32,-6.76&layer=mapnik&marker=-6.79,39.26"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bean Boutique. All rights reserved.</p>
+    <p>Crafted with obsession &amp; a good espresso.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Offers — Bean Boutique</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="page-loader"><div class="loader-logo">Bean <span>Boutique</span></div></div>
+<div id="scroll-progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Bean <span>Boutique</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="coffee.html">Coffee</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="offers.html" class="active">Offers</a></li>
+    <li><a href="cart.html" class="nav-cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a><a href="coffee.html">Coffee</a><a href="equipment.html">Equipment</a>
+  <a href="events.html">Events</a><a href="offers.html">Offers</a><a href="cart.html">Cart</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1920&q=80');">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,0.95) 0%,rgba(8,8,8,0.4) 100%);"></div>
+  <div class="page-hero-content">
+    <h1 class="page-hero-title">Special <em>Offers</em></h1>
+    <p class="page-hero-sub">Monthly Subscriptions · Members-Only Perks · Exclusive Discounts</p>
+  </div>
+</div>
+
+<!-- CURRENT OFFERS BANNER -->
+<section style="background:var(--gold);padding:1.2rem 4rem;">
+  <div style="max-width:1300px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <p style="font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);font-family:var(--font-body);">
+      <i class="fas fa-gift"></i> &nbsp;New subscriber gift: Free 50g tasting bag with every first box &nbsp;·&nbsp; Code: <strong>BEANBAG</strong> &nbsp;·&nbsp; Limited to first 100 subscribers
+    </p>
+  </div>
+</section>
+
+<!-- SUBSCRIPTION PLANS -->
+<section class="section" style="background:var(--black);">
+  <div style="max-width:1300px;margin:0 auto;text-align:center;">
+    <p class="section-label reveal" style="text-align:center;">Monthly Coffee Club</p>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+      Choose Your <em>Ritual</em>
+    </h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="text-align:center;margin:0 auto 1.5rem;">
+      Fresh, expertly roasted beans delivered to your door. Curated by our Head Roaster. Cancel anytime.
+    </p>
+
+    <!-- Toggle Monthly/Annual -->
+    <div class="reveal" style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:3rem;">
+      <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream-dim);">Monthly</span>
+      <div id="billing-toggle" onclick="toggleBilling()" style="width:48px;height:24px;background:var(--charcoal);border:1px solid var(--border-glass);border-radius:12px;cursor:none;position:relative;transition:background 0.3s;">
+        <div id="toggle-knob" style="width:18px;height:18px;background:var(--gold);border-radius:50%;position:absolute;top:2px;left:3px;transition:left 0.3s;"></div>
+      </div>
+      <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream-dim);">Annual <span style="color:var(--gold);">(Save 20%)</span></span>
+    </div>
+
+    <div class="offers-grid">
+
+      <!-- Basic -->
+      <div class="offer-card reveal">
+        <div class="offer-plan">Basic</div>
+        <div class="offer-price" id="basic-price">$29</div>
+        <div class="offer-period">per month · cancel anytime</div>
+        <ul class="offer-features">
+          <li>250g single-origin beans monthly</li>
+          <li>Roaster's tasting notes PDF</li>
+          <li>5% discount on all orders</li>
+          <li>Standard shipping included</li>
+          <li>Access to member newsletter</li>
+        </ul>
+        <button class="btn-outline subscribe-btn" data-plan="Basic" style="width:100%;padding:0.9rem;font-size:0.72rem;">
+          Subscribe — Basic
+        </button>
+      </div>
+
+      <!-- Premium (featured) -->
+      <div class="offer-card featured reveal reveal-delay-1">
+        <div class="offer-badge">Most Popular</div>
+        <div class="offer-plan">Premium</div>
+        <div class="offer-price" id="premium-price">$55</div>
+        <div class="offer-period">per month · cancel anytime</div>
+        <ul class="offer-features">
+          <li>500g curated blends + single origins</li>
+          <li>Monthly brewing guide booklet</li>
+          <li>10% discount on all orders</li>
+          <li>Priority express shipping</li>
+          <li>2 free event tickets per month</li>
+          <li>Early access to limited editions</li>
+          <li>Quarterly gift: equipment accessory</li>
+        </ul>
+        <button class="btn-primary subscribe-btn" data-plan="Premium" style="width:100%;padding:0.9rem;font-size:0.72rem;">
+          <span>Subscribe — Premium</span>
+        </button>
+      </div>
+
+      <!-- Deluxe -->
+      <div class="offer-card reveal reveal-delay-2">
+        <div class="offer-plan">Deluxe</div>
+        <div class="offer-price" id="deluxe-price">$89</div>
+        <div class="offer-period">per month · cancel anytime</div>
+        <ul class="offer-features">
+          <li>1kg premium & rare lots monthly</li>
+          <li>Personal roaster consultation call</li>
+          <li>15% lifetime discount on all orders</li>
+          <li>Same-day dispatch, tracked delivery</li>
+          <li>Unlimited free event attendance</li>
+          <li>First access to new products</li>
+          <li>Monthly equipment gift (value $50+)</li>
+          <li>Private member community access</li>
+        </ul>
+        <button class="btn-outline subscribe-btn" data-plan="Deluxe" style="width:100%;padding:0.9rem;font-size:0.72rem;">
+          Subscribe — Deluxe
+        </button>
+      </div>
+
+    </div><!-- /offers-grid -->
+
+    <p class="reveal" style="margin-top:2rem;font-size:0.68rem;color:rgba(240,232,216,0.3);letter-spacing:0.12em;text-align:center;">
+      All subscriptions auto-renew monthly. Cancel anytime from your account. No hidden fees.
+    </p>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" style="background:var(--charcoal);padding-top:5rem;padding-bottom:5rem;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-label reveal" style="text-align:center;">Plan Comparison</p>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;margin-bottom:3rem;">Side by <em>Side</em></h2>
+
+    <div class="reveal" style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.75rem;letter-spacing:0.05em;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border-glass);">
+            <th style="text-align:left;padding:1rem 1.5rem;color:var(--cream-dim);font-weight:300;text-transform:uppercase;letter-spacing:0.2em;font-size:0.65rem;">Feature</th>
+            <th style="text-align:center;padding:1rem;color:var(--cream-dim);font-weight:300;text-transform:uppercase;letter-spacing:0.2em;font-size:0.65rem;">Basic</th>
+            <th style="text-align:center;padding:1rem;color:var(--gold);font-weight:300;text-transform:uppercase;letter-spacing:0.2em;font-size:0.65rem;">Premium</th>
+            <th style="text-align:center;padding:1rem;color:var(--cream-dim);font-weight:300;text-transform:uppercase;letter-spacing:0.2em;font-size:0.65rem;">Deluxe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border-glass);">
+            <td style="padding:1rem 1.5rem;color:var(--cream-dim);">Monthly Beans</td>
+            <td style="text-align:center;padding:1rem;color:var(--cream);">250g</td>
+            <td style="text-align:center;padding:1rem;color:var(--gold);">500g</td>
+            <td style="text-align:center;padding:1rem;color:var(--cream);">1kg</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-glass);">
+            <td style="padding:1rem 1.5rem;color:var(--cream-dim);">Order Discount</td>
+            <td style="text-align:center;padding:1rem;color:var(--cream);">5%</td>
+            <td style="text-align:center;padding:1rem;color:var(--gold);">10%</td>
+            <td style="text-align:center;padding:1rem;color:var(--cream);">15%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-glass);">
+            <td style="padding:1rem 1.5rem;color:var(--cream-dim);">Event Access</td>
+            <td style="text-align:center;padding:1rem;color:rgba(240,232,216,0.3);">—</td>
+            <td style="text-align:center;padding:1rem;color:var(--gold);">2 / month</td>
+            <td style="text-align:center;padding:1rem;color:var(--cream);">Unlimited</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-glass);">
+            <td style="padding:1rem 1.5rem;color:var(--cream-dim);">Equipment Gift</td>
+            <td style="text-align:center;padding:1rem;color:rgba(240,232,216,0.3);">—</td>
+            <td style="text-align:center;padding:1rem;color:var(--gold);">Quarterly</td>
+            <td style="text-align:center;padding:1rem;color:var(--cream);">Monthly ($50+)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-glass);">
+            <td style="padding:1rem 1.5rem;color:var(--cream-dim);">Roaster Consultation</td>
+            <td style="text-align:center;color:rgba(240,232,216,0.3);">✕</td>
+            <td style="text-align:center;color:rgba(240,232,216,0.3);">✕</td>
+            <td style="text-align:center;color:var(--gold);">✓</td>
+          </tr>
+          <tr>
+            <td style="padding:1rem 1.5rem;color:var(--cream-dim);">Early Product Access</td>
+            <td style="text-align:center;color:rgba(240,232,216,0.3);">✕</td>
+            <td style="text-align:center;color:var(--gold);">✓</td>
+            <td style="text-align:center;color:var(--gold);">✓ First</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--black);padding-top:5rem;padding-bottom:5rem;">
+  <div style="max-width:800px;margin:0 auto;">
+    <p class="section-label reveal" style="text-align:center;">Questions</p>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;margin-bottom:3rem;">Frequently <em>Asked</em></h2>
+
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <!-- FAQ Items -->
+      <div class="faq-item reveal" style="border-bottom:1px solid var(--border-glass);padding:1.5rem 0;">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;cursor:none;background:none;border:none;text-align:left;">
+          <span style="font-size:0.82rem;letter-spacing:0.08em;color:var(--cream);">Can I customise my bean selection?</span>
+          <i class="fas fa-plus" style="color:var(--gold);font-size:0.75rem;transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+        </button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+          <p style="font-size:0.75rem;line-height:2;color:var(--cream-dim);padding-top:1rem;">Yes — after your first box you can log in and set preferences including roast level (light, medium, dark), origin, and processing method. Premium and Deluxe subscribers can also request specific origins.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1" style="border-bottom:1px solid var(--border-glass);padding:1.5rem 0;">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;cursor:none;background:none;border:none;text-align:left;">
+          <span style="font-size:0.82rem;letter-spacing:0.08em;color:var(--cream);">When does my box ship each month?</span>
+          <i class="fas fa-plus" style="color:var(--gold);font-size:0.75rem;transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+        </button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+          <p style="font-size:0.75rem;line-height:2;color:var(--cream-dim);padding-top:1rem;">Boxes are roasted and shipped on the 1st of every month (or the next business day). You'll receive tracking information via email. Deluxe subscribers receive same-day dispatch with next-day delivery.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2" style="border-bottom:1px solid var(--border-glass);padding:1.5rem 0;">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;cursor:none;background:none;border:none;text-align:left;">
+          <span style="font-size:0.82rem;letter-spacing:0.08em;color:var(--cream);">How do I cancel my subscription?</span>
+          <i class="fas fa-plus" style="color:var(--gold);font-size:0.75rem;transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+        </button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+          <p style="font-size:0.75rem;line-height:2;color:var(--cream-dim);padding-top:1rem;">Cancel anytime from your account dashboard with one click, or email us at hello@beanboutique.co. Cancel before the 25th of the month to avoid the next billing cycle. No questions asked, no fees.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal" style="padding:1.5rem 0;">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;cursor:none;background:none;border:none;text-align:left;">
+          <span style="font-size:0.82rem;letter-spacing:0.08em;color:var(--cream);">Do you ship internationally?</span>
+          <i class="fas fa-plus" style="color:var(--gold);font-size:0.75rem;transition:transform 0.3s;flex-shrink:0;margin-left:1rem;"></i>
+        </button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease;">
+          <p style="font-size:0.75rem;line-height:2;color:var(--cream-dim);padding-top:1rem;">Currently we ship across East Africa (Tanzania, Kenya, Uganda, Rwanda). International shipping to Europe and North America is launching Q3 2026. Join the waitlist by emailing hello@beanboutique.co.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Bean <span>Boutique</span></span>
+      <p class="footer-tagline">A sanctuary for the discerning coffee lover.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul>
+      <li><a href="index.html">Home</a></li><li><a href="coffee.html">Coffee</a></li>
+      <li><a href="equipment.html">Equipment</a></li><li><a href="events.html">Events</a></li>
+      <li><a href="offers.html">Offers</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="#">12 Roaster Lane, DSM</a></li>
+      <li><a href="mailto:hello@beanboutique.co">hello@beanboutique.co</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Hours</h5><ul>
+      <li><a href="#">Mon–Fri: 7am – 8pm</a></li>
+      <li><a href="#">Sat–Sun: 8am – 6pm</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bean Boutique. All rights reserved.</p>
+    <p>Crafted with obsession &amp; a good espresso.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Billing toggle
+let isAnnual = false;
+const prices = { basic: 29, premium: 55, deluxe: 89 };
+
+function toggleBilling() {
+  isAnnual = !isAnnual;
+  const knob = document.getElementById('toggle-knob');
+  knob.style.left = isAnnual ? '27px' : '3px';
+
+  const mult = isAnnual ? 0.8 : 1;
+  document.getElementById('basic-price').textContent   = '$' + Math.round(prices.basic   * mult);
+  document.getElementById('premium-price').textContent = '$' + Math.round(prices.premium * mult);
+  document.getElementById('deluxe-price').textContent  = '$' + Math.round(prices.deluxe  * mult);
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const icon   = btn.querySelector('i');
+  const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+  // Close all
+  document.querySelectorAll('.faq-a').forEach(a => a.style.maxHeight = '0px');
+  document.querySelectorAll('.faq-q i').forEach(i => { i.style.transform = 'rotate(0deg)'; });
+
+  if (!isOpen) {
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.style.transform = 'rotate(45deg)';
+  }
+}
+</script>
+</body>
+</html>

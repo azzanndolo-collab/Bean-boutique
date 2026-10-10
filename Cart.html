@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — Bean Boutique</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="page-loader"><div class="loader-logo">Bean <span>Boutique</span></div></div>
+<div id="scroll-progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Bean <span>Boutique</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="coffee.html">Coffee</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="offers.html">Offers</a></li>
+    <li><a href="cart.html" class="nav-cart-icon active"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a><a href="coffee.html">Coffee</a><a href="equipment.html">Equipment</a>
+  <a href="events.html">Events</a><a href="offers.html">Offers</a><a href="cart.html">Cart</a>
+</div>
+
+<!-- Cart Page Hero Band -->
+<div style="padding:12rem 4rem 4rem;background:var(--black-2);border-bottom:1px solid var(--border-glass);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <p class="section-label">Your Selection</p>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--cream);line-height:1.05;">
+      Shopping <em style="color:var(--gold-light);font-style:italic;">Cart</em>
+    </h1>
+  </div>
+</div>
+
+<!-- CART CONTENT -->
+<section class="section" style="background:var(--black);">
+  <div style="max-width:1300px;margin:0 auto;">
+
+    <!-- Empty State -->
+    <div class="cart-empty" id="cart-empty">
+      <div style="font-size:3rem;margin-bottom:1rem;opacity:0.2;">☕</div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added anything yet.<br>Explore our menu and find your next favourite cup.</p>
+      <a href="coffee.html" class="btn-primary"><span>Browse the Coffee Menu</span></a>
+    </div>
+
+    <!-- Cart Layout -->
+    <div class="cart-wrapper" id="cart-wrapper" style="display:none;">
+
+      <!-- Items -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border-glass);">
+          <p style="font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);">Items</p>
+          <button onclick="if(confirm('Clear cart?')){localStorage.removeItem('bean_boutique_cart');renderCart();updateCartCount();}" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,232,216,0.3);cursor:none;border-bottom:1px solid transparent;transition:all 0.25s;background:none;border:none;border-bottom:1px solid transparent;" onmouseenter="this.style.color='#c0392b';this.style.borderColor='#c0392b'" onmouseleave="this.style.color='rgba(240,232,216,0.3)';this.style.borderColor='transparent'">
+            Clear All
+          </button>
+        </div>
+        <div class="cart-items" id="cart-list"></div>
+
+        <!-- Promo Code -->
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--charcoal);border:1px solid var(--border-glass);">
+          <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Promo Code</p>
+          <div style="display:flex;gap:0.5rem;">
+            <input type="text" id="promo-input" class="form-input" placeholder="Enter code (try BEAN20)" style="flex:1;" />
+            <button onclick="applyPromo()" class="btn-outline" style="white-space:nowrap;padding:0.7rem 1.2rem;font-size:0.65rem;">Apply</button>
+          </div>
+          <p id="promo-msg" style="font-size:0.68rem;margin-top:0.5rem;color:var(--cream-dim);"></p>
+        </div>
+
+        <!-- Continue Shopping -->
+        <div style="margin-top:1.5rem;">
+          <a href="coffee.html" style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream-dim);display:flex;align-items:center;gap:0.5rem;transition:color 0.25s;" onmouseenter="this.style.color='var(--gold)'" onmouseleave="this.style.color='rgba(240,232,216,0.55)'">
+            <i class="fas fa-arrow-left"></i> Continue Shopping
+          </a>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="cart-summary hidden" id="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">$0.00</span>
+        </div>
+        <div class="summary-line">
+          <span>Shipping</span>
+          <span id="summary-shipping">$5.99</span>
+        </div>
+        <div class="summary-line">
+          <span>Tax (8%)</span>
+          <span id="summary-tax">$0.00</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span class="summary-total-price" id="summary-total">$0.00</span>
+        </div>
+
+        <div style="margin-top:2rem;margin-bottom:1rem;">
+          <button id="checkout-btn" class="btn-primary" style="width:100%;padding:1.1rem;">
+            <span>Proceed to Checkout</span>
+          </button>
+        </div>
+        <p style="font-size:0.62rem;letter-spacing:0.1em;color:rgba(240,232,216,0.3);text-align:center;">
+          <i class="fas fa-lock" style="color:var(--gold);margin-right:0.3rem;"></i>
+          Secure checkout. Free returns within 30 days.
+        </p>
+
+        <!-- Payment icons -->
+        <div style="display:flex;justify-content:center;gap:0.8rem;margin-top:1.5rem;opacity:0.35;font-size:1.5rem;">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- YOU MIGHT ALSO LIKE -->
+<section class="section" style="background:var(--charcoal);padding-top:5rem;padding-bottom:5rem;">
+  <div style="max-width:1300px;margin:0 auto;">
+    <p class="section-label reveal">Suggested</p>
+    <h2 class="section-title reveal reveal-delay-1">You Might <em>Also Like</em></h2>
+
+    <div class="product-grid" style="margin-top:2.5rem;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+      <div class="product-card reveal">
+        <div class="product-card-img"><img src="images/charcoal latte.jpg" alt="Charcoal Flat White" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Signature</span>
+          <div class="product-name">Charcoal Flat White</div>
+          <div class="product-notes">Activated Charcoal · Oat Milk</div>
+          <div class="product-footer">
+            <span class="product-price">$13</span>
+            <button class="add-to-cart-btn" data-id="charcoal-flat-white" data-name="Charcoal Flat White" data-price="13" data-img="https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?w=200&q=60" data-note="Signature"><span>Add</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img"><img src="images/cortado.jpg" alt="Black Cortado" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Espresso</span>
+          <div class="product-name">Black Cortado</div>
+          <div class="product-notes">Equal Parts · Balanced</div>
+          <div class="product-footer">
+            <span class="product-price">$9</span>
+            <button class="add-to-cart-btn" data-id="black-cortado" data-name="Black Cortado" data-price="9" data-img="https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?w=200&q=60" data-note="Espresso"><span>Add</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img"><img src="images/cold brew.jpg" alt="Cold Brew Reserve" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Cold Brew</span>
+          <div class="product-name">Cold Brew Reserve</div>
+          <div class="product-notes">24hr Steep · Smooth</div>
+          <div class="product-footer">
+            <span class="product-price">$13</span>
+            <button class="add-to-cart-btn" data-id="cold-brew-reserve" data-name="Cold Brew Reserve" data-price="13" data-img="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=200&q=60" data-note="Cold Brew"><span>Add</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card-img"><img src="images/Fellow Stagg EKG Pro.jpg" alt="Profitec Pro" loading="lazy" /></div>
+        <div class="product-card-body">
+          <span class="product-badge">Equipment</span>
+          <div class="product-name">Fellow Stagg EKG</div>
+          <div class="product-notes">Precision Kettle · Matte Black</div>
+          <div class="product-footer">
+            <span class="product-price">$195</span>
+            <button class="add-to-cart-btn" data-id="fellow-stagg-ekg" data-name="Fellow Stagg EKG Pro" data-price="195" data-img="https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=200&q=60" data-note="Precision Kettle"><span>Add</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Bean <span>Boutique</span></span>
+      <p class="footer-tagline">A sanctuary for the discerning coffee lover.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul>
+      <li><a href="index.html">Home</a></li><li><a href="coffee.html">Coffee</a></li>
+      <li><a href="equipment.html">Equipment</a></li><li><a href="events.html">Events</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="#">12 Roaster Lane, DSM</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#533b363f3f3c133136323d313c26273a2226367d303c"><span class="__cf_email__" data-cfemail="f49c9198989bb49691959a969b81809d858191da979b">[email&#160;protected]</span></a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Support</h5><ul>
+      <li><a href="#">Shipping Policy</a></li>
+      <li><a href="#">Returns</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bean Boutique. All rights reserved.</p>
+    <p>Crafted with obsession &amp; a good espresso.</p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+<script>
+// Promo code logic
+function applyPromo() {
+  const input = document.getElementById('promo-input');
+  const msg   = document.getElementById('promo-msg');
+  const code  = input.value.trim().toUpperCase();
+  if (code === 'BEAN20') {
+    msg.textContent = '✓ 20% discount applied!';
+    msg.style.color = 'var(--gold)';
+  } else if (code === '') {
+    msg.textContent = 'Please enter a code.';
+    msg.style.color = 'rgba(240,232,216,0.4)'

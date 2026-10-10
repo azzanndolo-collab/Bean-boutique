@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Bean Boutique</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="page-loader"><div class="loader-logo">Bean <span>Boutique</span></div></div>
+<div id="scroll-progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Bean <span>Boutique</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="coffee.html">Coffee</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="events.html" class="active">Events</a></li>
+    <li><a href="offers.html">Offers</a></li>
+    <li><a href="cart.html" class="nav-cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a><a href="coffee.html">Coffee</a><a href="equipment.html">Equipment</a>
+  <a href="events.html">Events</a><a href="offers.html">Offers</a><a href="cart.html">Cart</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1920&q=80');">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,0.95) 0%,rgba(8,8,8,0.35) 100%);"></div>
+  <div class="page-hero-content">
+    <h1 class="page-hero-title">Events &amp;<br><em>Experiences</em></h1>
+    <p class="page-hero-sub">Tastings · Workshops · Meet the Roaster</p>
+  </div>
+</div>
+
+<!-- EVENTS SECTION -->
+<section class="section" style="background:var(--black);">
+  <div style="max-width:1300px;margin:0 auto;">
+
+    <p class="section-label reveal">What's On</p>
+    <h2 class="section-title reveal reveal-delay-1">Immersive <em>Experiences</em></h2>
+    <p class="section-subtitle reveal reveal-delay-2" style="margin-bottom:4rem;">From guided tasting flights to hands-on brewing workshops — every event deepens your relationship with coffee.</p>
+
+    <div class="events-grid-full">
+
+      <!-- Event 1 -->
+      <div class="event-card-full reveal">
+        <div class="event-card-img">
+          <img src="images/Coffee Tasting Experience.jpg" alt="Coffee Tasting Flight" loading="lazy" />
+        </div>
+        <div class="event-card-body">
+          <div class="event-date"><i class="far fa-calendar-alt"></i> &nbsp;May 10, 2026 · 6:00 PM</div>
+          <div class="event-title">Coffee Tasting Flight</div>
+          <p class="event-desc">A guided journey through five single-origin profiles. Led by our Q-Grader, you'll taste, compare, and discover the unique character of each region. Includes tasting notes and a take-home sampler.</p>
+          <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:.4rem;"></i>Bean Boutique, DSM</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-users" style="color:var(--gold);margin-right:.4rem;"></i>Max 16 Guests</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-tag" style="color:var(--gold);margin-right:.4rem;"></i>$45 per person</span>
+          </div>
+          <a href="#register" class="btn-outline" style="display:inline-block;">Register Now</a>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card-full reveal reveal-delay-1">
+        <div class="event-card-img">
+          <img src="images/Latte art workshop.jpg" alt="Latte Art Workshop" loading="lazy" />
+        </div>
+        <div class="event-card-body">
+          <div class="event-date"><i class="far fa-calendar-alt"></i> &nbsp;May 17, 2026 · 10:00 AM</div>
+          <div class="event-title">Latte Art Workshop</div>
+          <p class="event-desc">Master the milk-steaming and pouring techniques used by our champion baristas. You'll learn the heart, rosetta, and tulip patterns — then take home your own milk pitcher.</p>
+          <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:.4rem;"></i>Bean Boutique, DSM</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-users" style="color:var(--gold);margin-right:.4rem;"></i>Max 8 Guests</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-tag" style="color:var(--gold);margin-right:.4rem;"></i>$65 per person</span>
+          </div>
+          <a href="#register" class="btn-outline" style="display:inline-block;">Register Now</a>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event-card-full reveal">
+        <div class="event-card-img">
+          <img src="images/Meet the Roaster.jpg" alt="Meet the Roaster" loading="lazy" />
+        </div>
+        <div class="event-card-body">
+          <div class="event-date"><i class="far fa-calendar-alt"></i> &nbsp;May 24, 2026 · 7:30 PM</div>
+          <div class="event-title">Meet the Roaster</div>
+          <p class="event-desc">An intimate evening with our Head Roaster, David Nguyen. Explore the journey from cherry to cup: origins, processing methods, roast profiling, and the philosophy behind every batch.</p>
+          <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:.4rem;"></i>Bean Boutique, DSM</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-users" style="color:var(--gold);margin-right:.4rem;"></i>Max 20 Guests</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-tag" style="color:var(--gold);margin-right:.4rem;"></i>$35 per person</span>
+          </div>
+          <a href="#register" class="btn-outline" style="display:inline-block;">Register Now</a>
+        </div>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="event-card-full reveal reveal-delay-1">
+        <div class="event-card-img">
+          <img src="images/Pour Over Masterclass.jpg" alt="Pour Over Masterclass" loading="lazy" />
+        </div>
+        <div class="event-card-body">
+          <div class="event-date"><i class="far fa-calendar-alt"></i> &nbsp;June 7, 2026 · 11:00 AM</div>
+          <div class="event-title">Pour Over Masterclass</div>
+          <p class="event-desc">Deep-dive into the science and art of pour over brewing. V60, Chemex, Kalita Wave — you'll master them all. Bring your kettle, or borrow ours. Brew-along format.</p>
+          <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:.4rem;"></i>Bean Boutique, DSM</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-users" style="color:var(--gold);margin-right:.4rem;"></i>Max 12 Guests</span>
+            <span style="font-size:0.68rem;letter-spacing:0.15em;color:var(--cream-dim);"><i class="fas fa-tag" style="color:var(--gold);margin-right:.4rem;"></i>$55 per person</span>
+          </div>
+          <a href="#register" class="btn-outline" style="display:inline-block;">Register Now</a>
+        </div>
+      </div>
+
+    </div><!-- /events-grid-full -->
+
+  </div>
+</section>
+
+<!-- REGISTRATION FORM -->
+<section class="section" id="register" style="background:var(--black-2);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <p class="section-label reveal">Reserve Your Spot</p>
+    <h2 class="section-title reveal reveal-delay-1">Event <em>Registration</em></h2>
+    <p class="section-subtitle reveal reveal-delay-2">Fill in the form below and we'll confirm your reservation within 24 hours.</p>
+
+    <div class="reg-form-section reveal mt-md">
+      <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;">Your Details</p>
+
+      <form id="reg-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="first-name">First Name</label>
+            <input type="text" id="first-name" class="form-input" placeholder="Amara" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last-name">Last Name</label>
+            <input type="text" id="last-name" class="form-input" placeholder="Hassan" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="event-select">Choose Event</label>
+          <select id="event-select" class="form-input" required>
+            <option value="">— Select an event —</option>
+            <option value="tasting">May 10 · Coffee Tasting Flight — $45</option>
+            <option value="latte-art">May 17 · Latte Art Workshop — $65</option>
+            <option value="roaster">May 24 · Meet the Roaster — $35</option>
+            <option value="pour-over">Jun 7 · Pour Over Masterclass — $55</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="guests">Number of Guests</label>
+          <select id="guests" class="form-input">
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="notes">Special Requests (optional)</label>
+          <textarea id="notes" class="form-input" rows="3" placeholder="Dietary requirements, accessibility needs…" style="resize:vertical;"></textarea>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <button type="submit" class="btn-primary" style="width:100%;">
+            <span>Confirm Registration</span>
+          </button>
+        </div>
+
+        <p style="margin-top:1.2rem;font-size:0.65rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;text-align:center;">
+          We'll send a confirmation email within 24 hours. Cancellations accepted up to 48 hrs before the event.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Bean <span>Boutique</span></span>
+      <p class="footer-tagline">A sanctuary for the discerning coffee lover.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul>
+      <li><a href="index.html">Home</a></li><li><a href="coffee.html">Coffee</a></li>
+      <li><a href="equipment.html">Equipment</a></li><li><a href="events.html">Events</a></li>
+      <li><a href="offers.html">Offers</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="#">12 Roaster Lane, DSM</a></li>
+      <li><a href="tel:+255700000000">+255 700 000 000</a></li>
+      <li><a href="mailto:hello@beanboutique.co">hello@beanboutique.co</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Hours</h5><ul>
+      <li><a href="#">Mon–Fri: 7am – 8pm</a></li>
+      <li><a href="#">Sat–Sun: 8am – 6pm</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Bean Boutique. All rights reserved.</p>
+    <p>Crafted with obsession &amp; a good espresso.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
